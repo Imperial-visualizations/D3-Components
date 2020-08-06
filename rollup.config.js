@@ -5,7 +5,8 @@ import commonjs from "@rollup/plugin-commonjs"
 import resolve from "@rollup/plugin-node-resolve"
 
 const externals = [
-    'vue'
+    'vue',
+    'd3'
 ]
 const pluginConfig = [
     includePaths( { paths: ['./','src']}),

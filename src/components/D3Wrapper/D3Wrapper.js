@@ -1,8 +1,3 @@
-<template>
-    <div class="iv-d3-wrapper" :id="id">
-    </div>
-</template>
-<script>
 import * as d3 from "d3";
 export default {
     props:{
@@ -36,6 +31,12 @@ export default {
         else{
             throw Error("One of exec or src must be provided");
         }
+    },
+    render(h,ctx){
+        return h('div',{
+            attrs:{
+                id:ctx.props.id
+            }
+        })
     }
 }
-</script>
