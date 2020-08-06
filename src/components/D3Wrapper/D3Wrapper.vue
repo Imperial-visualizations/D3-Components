@@ -3,6 +3,7 @@
     </div>
 </template>
 <script>
+import * as d3 from "d3";
 export default {
     props:{
         src:{
@@ -20,11 +21,12 @@ export default {
     },
     mounted(){
         if(this.exec){
-            this.exec(this.id);
+            this.exec(d3,this.id);
         }else if(this.src){
+            var id = this.id;
             import(this.src).then(
                 file => {
-                    console.log(`File succesfully loaded`)
+                    file(d3,id)
                 }).catch(
                     err => {
                         console.log(err);
